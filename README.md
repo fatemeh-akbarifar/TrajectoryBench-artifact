@@ -74,7 +74,9 @@ The audited DBBench and OSBench reports record the narrower validated test sets 
 
 ## Citation
 
-Citation metadata are provided in [CITATION.cff](CITATION.cff). The development repository is <https://github.com/fatemeh-akbarifar/TrajectoryBench>. The fixed version is `v1.0.0`, archived under the reserved Zenodo DOI [10.5281/zenodo.21971301](https://doi.org/10.5281/zenodo.21971301). The DOI becomes publicly resolvable when the final Zenodo record is published.
+Citation metadata are provided in [CITATION.cff](CITATION.cff). This public reproducibility repository is <https://github.com/fatemeh-akbarifar/TrajectoryBench-artifact>. The fixed version is `v1.0.0`, archived under the published Zenodo DOI [10.5281/zenodo.21971301](https://doi.org/10.5281/zenodo.21971301).
+
+The public `v1.0.0` tag was created from the audited private-development commit `8d42fc5218ece8ba51b290b55c5038313b3c546e`. Both tags have the same Git tree, `151e3878a3cd39980244765027020c4893761375`. This repository starts with a clean public history so that revoked credentials present only in the earlier private history are not redistributed.
 
 When describing the benchmark framework or its original environments, also cite AgentBench:
 

@@ -2,9 +2,9 @@
 
 This guide separates reproducibility of the stored analysis from a new run of the proprietary model API. A new API run is a replication attempt and is not expected to reproduce identical trajectories.
 
-The fixed artifact version is `v1.0.0`, archived under the reserved Zenodo DOI
-[10.5281/zenodo.21971301](https://doi.org/10.5281/zenodo.21971301). The DOI
-becomes publicly resolvable when the final record is published.
+The fixed artifact version is `v1.0.0`, archived under the published Zenodo DOI
+[10.5281/zenodo.21971301](https://doi.org/10.5281/zenodo.21971301). The public
+repository is <https://github.com/fatemeh-akbarifar/TrajectoryBench-artifact>.
 
 ## Build the sanitized research-data archive
 

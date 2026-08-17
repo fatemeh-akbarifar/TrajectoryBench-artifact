@@ -8,7 +8,7 @@ doi: 10.5281/zenodo.21971301
 authors:
   - family-names: Akbarifar
     given-names: Fatemeh
-repository-code: "https://github.com/fatemeh-akbarifar/TrajectoryBench"
+repository-code: "https://github.com/fatemeh-akbarifar/TrajectoryBench-artifact"
 url: "https://doi.org/10.5281/zenodo.21971301"
 license: Apache-2.0
 keywords:
