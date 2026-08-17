@@ -1,0 +1,6 @@
+# Analysis dependencies are isolated from the AgentBench execution environment.
+pandas==2.2.3
+scipy==1.13.1
+statsmodels==0.14.4
+scikit-learn==1.5.2
+matplotlib==3.9.4

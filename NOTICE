@@ -1,0 +1,10 @@
+TrajectoryBench
+Copyright 2026 Fatemeh Akbarifar
+
+TrajectoryBench is derived from AgentBench, originally developed by the AgentBench authors and distributed under the Apache License, Version 2.0:
+
+https://github.com/THUDM/AgentBench
+
+The derivative repository retains substantial AgentBench framework, environment, task, and documentation components. Thesis-specific modifications include factorial configuration interventions, repeated-execution orchestration, evaluator integrity and recovery logic, trajectory extraction and validation, statistical analysis, cross-environment ranking sensitivity, tests, and research reports.
+
+This notice does not change the licenses or terms of third-party datasets, benchmark components, container images, model services, or generated model outputs. Those materials must be reviewed separately before redistribution.

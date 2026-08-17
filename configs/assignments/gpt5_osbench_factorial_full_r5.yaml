@@ -1,0 +1,3 @@
+import: gpt5_osbench_factorial_full.yaml
+
+output: "outputs/gpt5_osbench_factorial_full_r5"

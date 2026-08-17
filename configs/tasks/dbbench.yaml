@@ -1,0 +1,119 @@
+default:
+  module: src.server.tasks.dbbench.DBBench
+  parameters:
+    concurrency: 1
+    max_round: 15
+    output_constraint: c0
+    max_repair_attempts: 0
+
+dbbench-dev:
+  parameters:
+    name: dbbench-dev
+    data_file: "data/dbbench/dev.jsonl"
+
+dbbench-std:
+  parameters:
+    name: dbbench-std
+    data_file: "data/dbbench/standard.jsonl"
+
+dbbench-std-p0:
+  parameters:
+    name: dbbench-std-p0
+    data_file: "data/dbbench/standard.jsonl"
+    max_round: 15
+
+dbbench-std-p1:
+  parameters:
+    name: dbbench-std-p1
+    data_file: "data/dbbench/standard.jsonl"
+    max_round: 10
+
+dbbench-std-p0c0:
+  parameters:
+    name: dbbench-std-p0c0
+    data_file: "data/dbbench/standard.jsonl"
+    max_round: 15
+    output_constraint: c0
+    max_repair_attempts: 0
+
+dbbench-std-p0c1:
+  parameters:
+    name: dbbench-std-p0c1
+    data_file: "data/dbbench/standard.jsonl"
+    max_round: 15
+    output_constraint: c1
+    max_repair_attempts: 1
+
+dbbench-std-p1c0:
+  parameters:
+    name: dbbench-std-p1c0
+    data_file: "data/dbbench/standard.jsonl"
+    max_round: 10
+    output_constraint: c0
+    max_repair_attempts: 0
+
+dbbench-std-p1c1:
+  parameters:
+    name: dbbench-std-p1c1
+    data_file: "data/dbbench/standard.jsonl"
+    max_round: 10
+    output_constraint: c1
+    max_repair_attempts: 1
+
+dbbench-smoke-p0:
+  parameters:
+    name: dbbench-smoke-p0
+    data_file: "data/dbbench/smoke.jsonl"
+    max_round: 15
+
+dbbench-smoke-p1:
+  parameters:
+    name: dbbench-smoke-p1
+    data_file: "data/dbbench/smoke.jsonl"
+    max_round: 10
+
+dbbench-smoke-p0c0:
+  parameters:
+    name: dbbench-smoke-p0c0
+    data_file: "data/dbbench/smoke.jsonl"
+    max_round: 15
+    output_constraint: c0
+    max_repair_attempts: 0
+
+dbbench-smoke-p0c1:
+  parameters:
+    name: dbbench-smoke-p0c1
+    data_file: "data/dbbench/smoke.jsonl"
+    max_round: 15
+    output_constraint: c1
+    max_repair_attempts: 1
+
+dbbench-smoke-p1c0:
+  parameters:
+    name: dbbench-smoke-p1c0
+    data_file: "data/dbbench/smoke.jsonl"
+    max_round: 10
+    output_constraint: c0
+    max_repair_attempts: 0
+
+dbbench-smoke-p1c1:
+  parameters:
+    name: dbbench-smoke-p1c1
+    data_file: "data/dbbench/smoke.jsonl"
+    max_round: 10
+    output_constraint: c1
+    max_repair_attempts: 1
+
+dbbench-debug:
+  parameters:
+    name: dbbench-debug
+    data_file: "data/dbbench/debug.jsonl"
+    max_round: 15
+
+dbbench-debug-c1:
+  parameters:
+    name: dbbench-debug-c1
+    data_file: "data/dbbench/debug.jsonl"
+    max_round: 15
+    output_constraint: c1
+    max_repair_attempts: 1

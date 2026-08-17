@@ -1,0 +1,17 @@
+import: definition.local.yaml
+
+concurrency:
+  task:
+    dbbench-smoke-p0: 1
+    dbbench-smoke-p1: 1
+  agent:
+    gpt-5: 1
+
+assignments:
+  - agent:
+      - gpt-5
+    task:
+      - dbbench-smoke-p0
+      - dbbench-smoke-p1
+
+output: "outputs/gpt5_dbbench_smoke_{TIMESTAMP}"

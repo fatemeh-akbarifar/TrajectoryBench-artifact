@@ -1,0 +1,23 @@
+# Release-safe equivalent of the executed definition: credentials are injected
+# through OPENAI_API_KEY instead of an ignored local agent file.
+import: definition.yaml
+
+concurrency:
+  task:
+    dbbench-std-p0c0: 1
+    dbbench-std-p0c1: 1
+    dbbench-std-p1c0: 1
+    dbbench-std-p1c1: 1
+  agent:
+    gpt-5: 1
+
+assignments:
+  - agent:
+      - gpt-5
+    task:
+      - dbbench-std-p0c0
+      - dbbench-std-p0c1
+      - dbbench-std-p1c0
+      - dbbench-std-p1c1
+
+output: "outputs/gpt5_dbbench_factorial_full"

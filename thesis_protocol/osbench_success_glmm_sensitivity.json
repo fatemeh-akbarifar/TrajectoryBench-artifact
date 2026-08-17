@@ -1,0 +1,133 @@
+{
+  "analysis_role": "sensitivity analysis; primary success analysis remains task-clustered logistic GEE",
+  "dataset": {
+    "input": "results/osbench_factorial_episode_metrics.csv",
+    "sha256": "26262e4043b57bf48620cf40e4ee20c8adc995ede0ba6dd179270467732edce8",
+    "observations": 2880,
+    "tasks": 144,
+    "formula": "official_success ~ p * c + (1 | task_identity)",
+    "inclusion": "same audited 2880-row OSBench dataset and inclusion rules as the primary GEE"
+  },
+  "software": {
+    "r_version": "R version 4.6.1 (2026-06-24)",
+    "platform": "aarch64-unknown-linux-gnu",
+    "lme4_version": "2.0.6",
+    "jsonlite_version": "2.0.0",
+    "container_base": "r-base:4.6.1@sha256:05ead76278095fb3c9a68509714f843a80c296db7c31f3a0a890c51d263ea43d"
+  },
+  "estimation": {
+    "function_name": "lme4::glmer",
+    "family": "binomial(logit)",
+    "approximation": "adaptive Gauss-Hermite quadrature (nAGQ = 10)",
+    "optimizer": "bobyqa",
+    "optimizer_maxfun": 200000,
+    "confidence_intervals": "two-sided 95% Wald normal approximation",
+    "p_values": "two-sided asymptotic Wald z tests"
+  },
+  "diagnostics": {
+    "converged": true,
+    "optimizer_code": 0,
+    "convergence_messages": [],
+    "warnings": [],
+    "singular_fit": false,
+    "singular_tolerance": 0.0001,
+    "random_intercept_variance": 37.600987665323316,
+    "random_intercept_sd": 6.1319644214006424,
+    "max_absolute_gradient": 9.6258645498892292e-06,
+    "hessian_min_eigenvalue": 3.2803823606561298,
+    "log_likelihood": -829.6653169795768,
+    "aic": 1669.3306339591536,
+    "bic": 1699.1583618248035
+  },
+  "fixed_effects": [
+    {
+      "term": "p",
+      "estimate": 2.9927762137880337e-07,
+      "standard_error": 0.20010471940391528,
+      "ci_method": "Wald normal approximation",
+      "ci_lower": -0.39219774389054579,
+      "ci_upper": 0.39219834244578849,
+      "odds_ratio": 1.0000002992776662,
+      "odds_ratio_ci_lower": 0.67557051081031239,
+      "odds_ratio_ci_upper": 1.4802312749796791,
+      "z_value": 1.4956050125669733e-06,
+      "p_value": 0.99999880667985142
+    },
+    {
+      "term": "c",
+      "estimate": 0.040040739417514855,
+      "standard_error": 0.200054050514754,
+      "ci_method": "Wald normal approximation",
+      "ci_lower": -0.35205799455275955,
+      "ci_upper": 0.43213947338778924,
+      "odds_ratio": 1.0408531770808007,
+      "odds_ratio_ci_lower": 0.70323933674287431,
+      "odds_ratio_ci_upper": 1.5405499659006012,
+      "z_value": 0.2001496061413755,
+      "p_value": 0.84136357809555884
+    },
+    {
+      "term": "p:c",
+      "estimate": -0.020015146457903355,
+      "standard_error": 0.28293042250818878,
+      "ci_method": "Wald normal approximation",
+      "ci_lower": -0.57454858470465386,
+      "ci_upper": 0.53451829178884713,
+      "odds_ratio": 0.98018382688124883,
+      "odds_ratio_ci_lower": 0.56295893973293754,
+      "odds_ratio_ci_upper": 1.7066259484845301,
+      "z_value": -0.070742291622330089,
+      "p_value": 0.94360286128567172
+    }
+  ],
+  "comparison_with_primary_gee": [
+    {
+      "term": "p",
+      "gee_estimate": -1.7810154707293989e-16,
+      "gee_odds_ratio": 0.99999999999999978,
+      "gee_ci_lower": 0.90908876831184759,
+      "gee_ci_upper": 1.100002590348764,
+      "gee_p_value": 0.99999999999999711,
+      "glmm_estimate": 2.9927762137880337e-07,
+      "glmm_odds_ratio": 1.0000002992776662,
+      "glmm_ci_lower": 0.67557051081031239,
+      "glmm_ci_upper": 1.4802312749796791,
+      "glmm_p_value": 0.99999880667985142,
+      "direction_tolerance": 9.9999999999999995e-07,
+      "both_negligible": true,
+      "same_direction": true
+    },
+    {
+      "term": "c",
+      "gee_estimate": 0.011450779951883349,
+      "gee_odds_ratio": 1.0115165910890376,
+      "gee_ci_lower": 0.90933120169998549,
+      "gee_ci_upper": 1.1251849844540573,
+      "gee_p_value": 0.83309010523165894,
+      "glmm_estimate": 0.040040739417514855,
+      "glmm_odds_ratio": 1.0408531770808007,
+      "glmm_ci_lower": 0.70323933674287431,
+      "glmm_ci_upper": 1.5405499659006012,
+      "glmm_p_value": 0.84136357809555884,
+      "direction_tolerance": 9.9999999999999995e-07,
+      "both_negligible": false,
+      "same_direction": true
+    },
+    {
+      "term": "p:c",
+      "gee_estimate": -0.0057225672389118864,
+      "gee_odds_ratio": 0.99429377546006481,
+      "gee_ci_lower": 0.86386315263763747,
+      "gee_ci_upper": 1.1444175028186714,
+      "gee_p_value": 0.93642640414812162,
+      "glmm_estimate": -0.020015146457903355,
+      "glmm_odds_ratio": 0.98018382688124883,
+      "glmm_ci_lower": 0.56295893973293754,
+      "glmm_ci_upper": 1.7066259484845301,
+      "glmm_p_value": 0.94360286128567172,
+      "direction_tolerance": 9.9999999999999995e-07,
+      "both_negligible": false,
+      "same_direction": true
+    }
+  ]
+}

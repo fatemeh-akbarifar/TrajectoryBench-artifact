@@ -1,0 +1,21 @@
+# Release-safe equivalent of the executed definition: credentials are injected
+# through OPENAI_API_KEY instead of an ignored local agent file.
+import: definition.yaml
+
+concurrency:
+  task:
+    os-std-p0c0: 1
+    os-std-p0c1: 1
+    os-std-p1c0: 1
+    os-std-p1c1: 1
+  agent:
+    gpt-5: 1
+
+assignments:
+  - agent:
+      - gpt-5
+    task:
+      - os-std-p0c0
+      - os-std-p0c1
+      - os-std-p1c0
+      - os-std-p1c1

@@ -1,0 +1,15 @@
+import: definition.local.yaml
+
+concurrency:
+  task:
+    dbbench-std: 1
+  agent:
+    gpt-4o-mini: 1
+
+assignments:
+  - agent:
+      - gpt-4o-mini
+    task:
+      - dbbench-std
+
+output: "outputs/pilot_db_tiny_{TIMESTAMP}"

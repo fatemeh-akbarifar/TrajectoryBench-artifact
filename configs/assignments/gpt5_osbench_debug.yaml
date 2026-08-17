@@ -1,0 +1,17 @@
+import: definition.local.yaml
+
+concurrency:
+  task:
+    os-debug-c0: 1
+    os-debug-c1: 1
+  agent:
+    gpt-5: 1
+
+assignments:
+  - agent:
+      - gpt-5
+    task:
+      - os-debug-c0
+      - os-debug-c1
+
+output: "outputs/gpt5_osbench_debug_atomic"

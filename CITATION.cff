@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use TrajectoryBench, cite the archived release and the upstream AgentBench paper."
+title: "TrajectoryBench: Research Data and Reproducibility Artifacts for Multi-Metric Evaluation of Interactive LLM Agents"
+type: software
+version: 1.0.0
+date-released: 2026-08-17
+doi: 10.5281/zenodo.21971301
+authors:
+  - family-names: Akbarifar
+    given-names: Fatemeh
+repository-code: "https://github.com/fatemeh-akbarifar/TrajectoryBench"
+url: "https://doi.org/10.5281/zenodo.21971301"
+license: Apache-2.0
+keywords:
+  - interactive LLM agents
+  - AgentBench
+  - trajectory evaluation
+  - empirical software engineering
+  - reproducibility
+references:
+  - type: conference-paper
+    title: "AgentBench: Evaluating LLMs as Agents"
+    authors:
+      - family-names: Liu
+        given-names: Xiao
+    year: 2024
+    conference:
+      name: "International Conference on Learning Representations"
+    url: "https://openreview.net/forum?id=zAdUB0aCTQ"

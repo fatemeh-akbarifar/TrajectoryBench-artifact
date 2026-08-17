@@ -1,0 +1,202 @@
+os-dev:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    name: "os-dev"
+    concurrency: 24
+    round_limit: 8
+
+    docker_config:
+      localhost: local-os
+      directory: data/os_interaction/res/dockerfiles
+
+    scripts:
+      directory: data/os_interaction/res/scripts
+
+    data_config:
+      files:
+        - problem_file: data/os_interaction/data/dev.json
+          script_dir: data/os_interaction/scripts/dev/
+          index_prefix: "dev-001-"
+
+      bk: [ ]
+      ignore: [ ]
+
+os-std:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters: &os_std_parameters
+    name: "os-std"
+    concurrency: 24
+    round_limit: 8
+    output_constraint: c0
+    max_repair_attempts: 0
+
+    docker_config:
+      localhost: local-os
+      directory: data/os_interaction/res/dockerfiles
+
+    scripts:
+      directory: data/os_interaction/res/scripts
+
+    data_config:
+      files:
+        - problem_file: data/os_interaction/data/1/*.json
+          script_dir: data/os_interaction/scripts/1/
+          index_prefix: "std-001-"
+        - problem_file: data/os_interaction/data/2/*.json
+          script_dir: data/os_interaction/scripts/2/
+          index_prefix: "std-002-"
+        - problem_file: data/os_interaction/data/3/*.json
+          script_dir: data/os_interaction/scripts/3/
+          index_prefix: "std-003-"
+        - problem_file: data/os_interaction/data/4/*.json
+          script_dir: data/os_interaction/scripts/4/
+          index_prefix: "std-004-"
+        - problem_file: data/os_interaction/data/5/*.json
+          script_dir: data/os_interaction/scripts/5/
+          index_prefix: "std-005-"
+        - problem_file: data/os_interaction/data/6/*.json
+          script_dir: data/os_interaction/scripts/6/
+          index_prefix: "std-006-"
+        - problem_file: data/os_interaction/data/7/*.json
+          script_dir: data/os_interaction/scripts/7/
+          index_prefix: "std-007-"
+
+      bk: [ ]
+      ignore: [ ]
+
+os-std-p0c0:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_std_parameters
+    name: "os-std-p0c0"
+    round_limit: 8
+    output_constraint: c0
+    max_repair_attempts: 0
+
+os-std-p0c1:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_std_parameters
+    name: "os-std-p0c1"
+    round_limit: 8
+    output_constraint: c1
+    max_repair_attempts: 1
+
+os-std-p1c0:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_std_parameters
+    name: "os-std-p1c0"
+    round_limit: 5
+    output_constraint: c0
+    max_repair_attempts: 0
+
+os-std-p1c1:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_std_parameters
+    name: "os-std-p1c1"
+    round_limit: 5
+    output_constraint: c1
+    max_repair_attempts: 1
+
+os-debug-c0:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_std_parameters
+    name: "os-debug-c0"
+    concurrency: 1
+    round_limit: 8
+    output_constraint: c0
+    max_repair_attempts: 0
+    data_config:
+      files:
+        - problem_file: data/os_interaction/data/4/N4.json
+          script_dir: data/os_interaction/scripts/4/
+          index_prefix: "debug-004-N4-"
+          indices: [0]
+      bk: [ ]
+      ignore: [ ]
+
+os-debug-c1:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_std_parameters
+    name: "os-debug-c1"
+    concurrency: 1
+    round_limit: 8
+    output_constraint: c1
+    max_repair_attempts: 1
+    data_config:
+      files:
+        - problem_file: data/os_interaction/data/4/N4.json
+          script_dir: data/os_interaction/scripts/4/
+          index_prefix: "debug-004-N4-"
+          indices: [0]
+      bk: [ ]
+      ignore: [ ]
+
+os-smoke-p0c0:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters: &os_smoke_parameters
+    <<: *os_std_parameters
+    name: "os-smoke-p0c0"
+    concurrency: 1
+    round_limit: 8
+    output_constraint: c0
+    max_repair_attempts: 0
+    data_config:
+      files:
+        - problem_file: data/os_interaction/data/1/stock.json
+          script_dir: data/os_interaction/scripts/1/
+          index_prefix: "smoke-001-stock-"
+          indices: [0]
+        - problem_file: data/os_interaction/data/3/ac.json
+          script_dir: data/os_interaction/scripts/3/
+          index_prefix: "smoke-003-ac-"
+          indices: [4]
+        - problem_file: data/os_interaction/data/4/N4.json
+          script_dir: data/os_interaction/scripts/4/
+          index_prefix: "smoke-004-N4-"
+          indices: [0]
+        - problem_file: data/os_interaction/data/5/new.json
+          script_dir: data/os_interaction/scripts/5/
+          index_prefix: "smoke-005-new-"
+          indices: [0]
+        - problem_file: data/os_interaction/data/6/new.json
+          script_dir: data/os_interaction/scripts/6/
+          index_prefix: "smoke-006-new-"
+          indices: [3]
+        - problem_file: data/os_interaction/data/7/bootstrap.json
+          script_dir: data/os_interaction/scripts/7/
+          index_prefix: "smoke-007-bootstrap-"
+          indices: [0]
+      bk: [ ]
+      ignore: [ ]
+
+os-smoke-p0c1:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_smoke_parameters
+    name: "os-smoke-p0c1"
+    round_limit: 8
+    output_constraint: c1
+    max_repair_attempts: 1
+
+os-smoke-p1c0:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_smoke_parameters
+    name: "os-smoke-p1c0"
+    round_limit: 5
+    output_constraint: c0
+    max_repair_attempts: 0
+
+os-smoke-p1c1:
+  module: "src.server.tasks.os_interaction.OSInteraction"
+  parameters:
+    <<: *os_smoke_parameters
+    name: "os-smoke-p1c1"
+    round_limit: 5
+    output_constraint: c1
+    max_repair_attempts: 1

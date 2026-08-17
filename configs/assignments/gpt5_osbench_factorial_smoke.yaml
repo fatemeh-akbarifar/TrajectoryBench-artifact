@@ -1,0 +1,21 @@
+import: definition.local.yaml
+
+concurrency:
+  task:
+    os-smoke-p0c0: 1
+    os-smoke-p0c1: 1
+    os-smoke-p1c0: 1
+    os-smoke-p1c1: 1
+  agent:
+    gpt-5: 1
+
+assignments:
+  - agent:
+      - gpt-5
+    task:
+      - os-smoke-p0c0
+      - os-smoke-p0c1
+      - os-smoke-p1c0
+      - os-smoke-p1c1
+
+output: "outputs/gpt5_osbench_factorial_smoke"
