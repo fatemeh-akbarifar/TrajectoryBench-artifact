@@ -89,3 +89,8 @@ Code in this derivative repository remains under the [Apache License 2.0](LICENS
 ## Security and privacy
 
 Never commit API keys or local credential files. Before a public release, scan the current tree and full Git history for secrets and inspect trajectories for provider identifiers, personal paths, and private data.
+
+## AI-assisted tools disclosure
+
+OpenAI ChatGPT and Codex supported research planning, literature discovery and verification, documentation, testing, debugging, and review. The author selected the research questions and methods, verified cited sources and generated outputs, executed and validated the experiments, interpreted the results, and takes responsibility for the thesis and this repository. AI-generated material was not treated as scientific evidence.
+
